@@ -1,0 +1,13 @@
+<view class="floating-bar {{ isRunning ? 'show' : '' }}" wx:if="{{ isRunning }}">
+  <view class="bar-content">
+    <view class="timer-info">
+      <text class="emoji">⏱</text>
+      <text class="status-text">{{ isPaused ? '已暂停' : '专注进行中' }}</text>
+      <text class="time-text" wx:if="{{ !isPaused }}">{{ displayTime }}</text>
+    </view>
+    <view class="back-btn" bindtap="goBack">
+      <text>返回</text>
+      <van-icon name="arrow" size="12px" color="#fff" />
+    </view>
+  </view>
+</view>

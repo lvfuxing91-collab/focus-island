@@ -1,0 +1,59 @@
+<view class="container timer-container">
+  <view class="timer-area">
+    <view class="timer-wrapper">
+      <view class="circle-base"></view>
+      <view class="halo-container {{ isPaused ? 'idle' : 'active' }}">
+        <view class="halo-tail"></view>
+        <view class="halo-dot"></view>
+      </view>
+      <view class="timer-inner">
+        <view class="timer-text">{{ displayTime }}</view>
+        <view class="timer-subtitle">DEEP FOCUS</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="items-badge" wx:if="{{itemNum === 0}}">
+    已记录 {{ itemNum }} 项专注事项
+  </view>
+
+  <scroll-view scroll-y class="items-list-scroll" wx:if="{{itemNum > 0}}">
+    <view class="item-card" wx:for="{{currentItems}}" wx:key="id">
+      <view class="item-content" bindtap="editItem" data-id="{{item.id}}">
+        <view class="item-title">{{item.content}}</view>
+        <view class="item-meta">
+          <view class="tag" style="background-color: {{item.tagColor}}20; color: {{item.tagColor}};">{{item.tagName}}</view>
+        </view>
+      </view>
+      <van-icon name="delete-o" size="20px" color="#95A5A6" bindtap="deleteItem" data-id="{{item.id}}" />
+    </view>
+  </scroll-view>
+
+  <view class="controls-area">
+    <view class="main-controls">
+      <view class="pause-btn" bindtap="togglePause">
+        <van-icon name="{{ isPaused ? 'play' : 'pause' }}" size="32px" color="#fff" />
+      </view>
+      <view class="add-btn" bindtap="openAddItem">
+        <van-icon name="plus" size="24px" color="#fff" />
+      </view>
+    </view>
+    <view class="end-btn-wrapper">
+      <view class="end-btn" bindtap="confirmEnd">结束计时</view>
+      <view class="abandon-btn" bindtap="confirmAbandon">放弃</view>
+    </view>
+  </view>
+
+  <item-editor 
+    show="{{ showEditor }}" 
+    itemData="{{ editingItem }}" 
+    allowTimeEdit="{{ false }}" 
+    bind:save="onItemSave" 
+    bind:cancel="closeEditor" 
+  />
+
+  <van-dialog id="van-dialog" />
+  <van-toast id="van-toast" />
+
+  <tab-bar id="tab-bar" />
+</view>

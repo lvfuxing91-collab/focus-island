@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的",
+  "navigationBarBackgroundColor": "#EBF4F6",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "floating-bar": "../../components/floating-bar/index"
+  }
+}

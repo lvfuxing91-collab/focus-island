@@ -1,0 +1,45 @@
+<view class="container record-container">
+  <view class="summary-card">
+    <view class="card-subtitle">TOTAL DURATION</view>
+    <view class="duration-display">
+      <text class="num">{{durationObj.h}}</text>
+      <text class="unit">h</text>
+      <text class="num">{{durationObj.m}}</text>
+      <text class="unit">m</text>
+    </view>
+    <view class="card-desc">共专注 {{durationObj.h}}小时{{durationObj.m}}分钟</view>
+  </view>
+
+  <view class="section-header">
+    <view class="title">专注事项</view>
+    <view class="count">{{items.length}} ITEMS</view>
+  </view>
+
+  <scroll-view scroll-y class="items-list">
+    <view class="item-card" wx:for="{{items}}" wx:key="id">
+      <view class="item-content" bindtap="editItem" data-id="{{item.id}}">
+        <view class="item-title">{{item.content}}</view>
+        <view class="item-meta">
+          <view class="tag" style="background-color: {{item.tagColor}}20; color: {{item.tagColor}};">{{item.tagName}}</view>
+          <text class="time" wx:if="{{item.timeRangeStr}}">{{item.timeRangeStr}}</text>
+        </view>
+      </view>
+      <van-icon name="delete-o" size="20px" color="#95A5A6" bindtap="deleteItem" data-id="{{item.id}}" />
+    </view>
+    
+    <view class="add-item-wrap" bindtap="openAddItem">
+      <van-icon name="plus" size="20px" color="#0F6C8C" />
+      <text class="add-text">添加事项</text>
+    </view>
+  </scroll-view>
+
+  <item-editor 
+    show="{{ showEditor }}" 
+    itemData="{{ editingItem }}" 
+    allowTimeEdit="{{ false }}" 
+    bind:save="onItemSave" 
+    bind:cancel="closeEditor" 
+  />
+  
+  <van-toast id="van-toast" />
+</view>

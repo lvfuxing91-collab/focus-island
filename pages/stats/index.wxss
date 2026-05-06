@@ -1,0 +1,281 @@
+.stats-container {
+  padding: 40rpx 32rpx 140rpx 32rpx;
+  background-color: #F6FAFC;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.summary-card {
+  background: linear-gradient(135deg, #EAF3F6 0%, #D4E6EE 100%);
+  border-radius: 40rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 10rpx 30rpx rgba(15, 108, 140, 0.05);
+}
+
+.total-card {
+  background: linear-gradient(135deg, #F0F4F8 0%, #E2E8F0 100%);
+  margin-bottom: 60rpx;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.card-title {
+  font-size: 24rpx;
+  color: #6C8A9B;
+  letter-spacing: 2rpx;
+}
+
+.main-metric {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 30rpx;
+}
+
+.main-metric .num {
+  font-size: 96rpx;
+  font-weight: bold;
+  color: #0F6C8C;
+}
+
+.main-metric .unit {
+  font-size: 32rpx;
+  color: #0F6C8C;
+  margin-left: 10rpx;
+  font-weight: bold;
+}
+
+.sub-metrics {
+  display: flex;
+  gap: 20rpx;
+}
+
+.sub-pill {
+  background: rgba(255, 255, 255, 0.6);
+  color: #6B7C85;
+  font-size: 24rpx;
+  padding: 8rpx 20rpx;
+  border-radius: 30rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #1E2A2F;
+}
+
+.section-action {
+  font-size: 24rpx;
+  color: #0F6C8C;
+}
+
+.time-tabs {
+  display: flex;
+  background: #EAF3F6;
+  border-radius: 30rpx;
+  padding: 4rpx;
+}
+
+.time-tab {
+  font-size: 24rpx;
+  color: #6B7C85;
+  padding: 8rpx 24rpx;
+  border-radius: 26rpx;
+  transition: all 0.3s;
+}
+
+.time-tab.active {
+  background: #fff;
+  color: #0F6C8C;
+  font-weight: bold;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.05);
+}
+
+.chart-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.chart-info-date {
+  font-size: 24rpx;
+  color: #95A5A6;
+}
+
+.chart-info-duration {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #0F6C8C;
+  margin-top: 4rpx;
+}
+
+.chart-bars.month-mode .bar-col {
+  width: 12rpx;
+}
+
+.chart-bars.month-mode .bar {
+  width: 6rpx;
+}
+
+.dist-bar {
+  width: 100%;
+  height: 24rpx;
+  background: #F0F4F8;
+  border-radius: 12rpx;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+}
+
+.dist-segment {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.dist-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+  justify-content: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+}
+
+.legend-dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.legend-name {
+  font-size: 24rpx;
+  color: #6B7C85;
+}
+
+.chart-container {
+  background: #fff;
+  border-radius: 30rpx;
+  padding: 40rpx 30rpx 20rpx;
+  height: 360rpx;
+  margin-bottom: 60rpx;
+  box-shadow: 0 10rpx 20rpx rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-bars {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.bar-col {
+  width: 40rpx;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.bar {
+  width: 16rpx;
+  border-radius: 8rpx;
+  transition: height 0.3s ease;
+}
+
+.chart-x-axis {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10rpx;
+}
+
+.x-label {
+  font-size: 22rpx;
+  color: #95A5A6;
+  width: 40rpx;
+  text-align: center;
+}
+
+.x-label.active {
+  color: #0F6C8C;
+  font-weight: bold;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  padding-bottom: 40rpx;
+}
+
+.history-item {
+  background: #fff;
+  border-radius: 30rpx;
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.02);
+}
+
+.item-icon-wrap {
+  width: 80rpx;
+  height: 80rpx;
+  background: #F6FAFC;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24rpx;
+}
+
+.item-content {
+  flex: 1;
+}
+
+.item-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #1E2A2F;
+  margin-bottom: 8rpx;
+}
+
+.item-meta {
+  font-size: 22rpx;
+  color: #95A5A6;
+}
+
+.item-right {
+  text-align: right;
+}
+
+.duration {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #0F6C8C;
+  margin-bottom: 6rpx;
+}
+
+.status {
+  font-size: 22rpx;
+  color: #95A5A6;
+}

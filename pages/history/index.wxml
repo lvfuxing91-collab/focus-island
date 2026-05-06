@@ -1,0 +1,89 @@
+<view class="container history-container">
+  <!-- Top Filter -->
+  <view class="filter-tabs">
+    <van-tabs active="{{ activeTab }}" bind:change="onTabChange" color="#0F6C8C" border="{{ false }}" nav-class="custom-nav">
+      <van-tab title="全部"></van-tab>
+      <van-tab title="本周"></van-tab>
+      <van-tab title="本月"></van-tab>
+    </van-tabs>
+  </view>
+
+  <scroll-view scroll-y class="history-list-scroll">
+    <block wx:if="{{groupedSessions.length > 0}}">
+      <view wx:for="{{groupedSessions}}" wx:key="title" class="date-group">
+        <view class="date-header">
+          <text class="date-title">{{item.title}}</text>
+          <text class="day-total">当日专注 {{item.totalDurationStr}}</text>
+        </view>
+
+        <view class="session-list">
+          <van-collapse value="{{ activeNames }}" bind:change="onCollapseChange" border="{{ false }}">
+            <van-collapse-item 
+              wx:for="{{item.items}}" 
+              wx:for-item="session" 
+              wx:key="id" 
+              name="{{session.id}}"
+              is-link="{{false}}"
+              custom-class="session-collapse-item"
+              content-class="session-collapse-content"
+            >
+              <view slot="title" class="session-header">
+                <view class="tags-row" style="display: flex; gap: 4rpx; align-items: center; margin-right: 24rpx; flex-shrink: 0;">
+                  <view class="tag-indicator" wx:for="{{session.uniqueTags}}" wx:for-item="tag" wx:key="id" style="width: 12rpx; height: 40rpx; border-radius: 6rpx; background-color: {{tag.color}}; margin-right: 0;"></view>
+                </view>
+                <view class="session-info">
+                  <view class="session-main">
+                    <text class="session-duration">{{session.durationMin}}min</text>
+                    <text class="session-count">({{session.itemCount}}项)</text>
+                  </view>
+                  <view class="session-time">{{session.timeStr}} 开始</view>
+                </view>
+                <van-icon name="{{ activeNames.includes(session.id) ? 'arrow-up' : 'arrow-down' }}" color="#C0C8CC" size="16px" />
+              </view>
+
+              <view class="item-details">
+                <view wx:for="{{session.formattedItems}}" wx:for-item="task" wx:key="index" class="task-row" 
+                      bindtap="onItemClick" data-session-id="{{session.id}}" data-item-id="{{task.id}}">
+                  <view class="task-dot" style="background-color: {{task.tagColor}}"></view>
+                  <view class="task-info">
+                    <text class="task-name">{{task.content}}</text>
+                    <view class="task-meta">
+                      <text class="task-tag">{{task.tagName}}</text>
+                      <text class="task-time" wx:if="{{task.timeRangeStr}}">{{task.timeRangeStr}}</text>
+                    </view>
+                  </view>
+                  <view class="task-actions" catchtap="onItemDelete" data-session-id="{{session.id}}" data-item-id="{{task.id}}">
+                    <van-icon name="delete-o" color="#95A5A6" size="20px" />
+                  </view>
+                </view>
+                <view class="add-task-btn" catchtap="onItemAdd" data-session-id="{{session.id}}">
+                  <van-icon name="plus" size="14px" /> 添加事项
+                </view>
+              </view>
+            </van-collapse-item>
+          </van-collapse>
+        </view>
+      </view>
+    </block>
+
+    <!-- Empty State -->
+    <view wx:else class="empty-state">
+      <van-empty image="search" description="还没有专注记录，去开始第一次专注吧">
+        <van-button round type="info" color="#0F6C8C" custom-class="start-btn" bindtap="goToHome">
+          开始专注
+        </van-button>
+      </van-empty>
+    </view>
+  </scroll-view>
+
+  <item-editor 
+    show="{{ showEditor }}" 
+    itemData="{{ editingItem }}" 
+    sessionDate="{{ editingSessionDate }}" 
+    sessionStart="{{ editingSessionStart }}" 
+    sessionEnd="{{ editingSessionEnd }}" 
+    allowTimeEdit="{{ true }}" 
+    bind:save="onEditorSave" 
+    bind:cancel="onEditorCancel" 
+  />
+</view>

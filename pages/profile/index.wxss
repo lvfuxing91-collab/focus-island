@@ -1,0 +1,151 @@
+.profile-container {
+  padding: 40rpx 32rpx 140rpx 32rpx;
+  background-color: #EBF4F6;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.header-area {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60rpx;
+  padding-top: 20rpx;
+}
+
+.avatar-wrap {
+  position: relative;
+  margin-right: 32rpx;
+  flex-shrink: 0;
+}
+
+.avatar-btn {
+  padding: 0;
+  width: 144rpx !important;
+  height: 144rpx !important;
+  border-radius: 50% !important;
+  background: #fff;
+  overflow: visible;
+  line-height: normal;
+  border: 4rpx solid #fff;
+  box-shadow: 0 8rpx 16rpx rgba(15, 108, 140, 0.1);
+}
+
+.avatar-btn::after {
+  border: none;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #f0f4f8;
+}
+
+.camera-icon {
+  position: absolute;
+  right: 4rpx;
+  bottom: 4rpx;
+  background: #0F6C8C;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4rpx solid #fff;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.user-name-wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.user-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1E2A2F;
+}
+
+.nickname-input {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #1E2A2F;
+  width: 100%;
+  height: 50rpx;
+  border-bottom: 2rpx solid #0F6C8C;
+}
+
+.edit-icon {
+  margin-left: 12rpx;
+}
+
+.data-overview {
+  font-size: 24rpx;
+  color: #6C8A9B;
+}
+
+.settings-group {
+  margin-bottom: 40rpx;
+}
+
+.group-title {
+  font-size: 24rpx;
+  color: #6C8A9B;
+  margin-bottom: 16rpx;
+  padding-left: 12rpx;
+}
+
+.menu-list {
+  background: #fff;
+  border-radius: 24rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 10rpx rgba(0,0,0,0.02);
+  padding: 0 32rpx;
+}
+
+.menu-item {
+  height: 104rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #F0F4F8;
+}
+
+.menu-item.border-none {
+  border-bottom: none;
+}
+
+.menu-icon {
+  font-size: 36rpx;
+  color: #0F6C8C;
+  margin-right: 20rpx;
+}
+
+.menu-text {
+  flex: 1;
+  font-size: 28rpx;
+  color: #1E2A2F;
+}
+
+.menu-arrow {
+  font-size: 32rpx;
+  color: #C0C8CC;
+}
+
+.footer-version {
+  text-align: center;
+  margin-top: 60rpx;
+  padding-bottom: 40rpx;
+}
+
+.footer-version text {
+  font-size: 24rpx;
+  color: #95A5A6;
+}

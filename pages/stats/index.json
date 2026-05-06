@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "专注数据",
+  "usingComponents": {
+    "van-empty": "@vant/weapp/empty/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "floating-bar": "../../components/floating-bar/index"
+  }
+}

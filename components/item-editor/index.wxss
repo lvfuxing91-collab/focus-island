@@ -1,0 +1,68 @@
+.editor-popup {
+  padding: 40rpx 40rpx calc(80rpx + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.popup-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 40rpx;
+  text-align: center;
+  color: #1E2A2F;
+}
+
+.time-edit-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.time-text {
+  font-size: 28rpx;
+  color: #95A5A6;
+  padding: 4rpx 16rpx;
+  background: #fff;
+  border-radius: 8rpx;
+}
+
+.time-text.active {
+  color: #0F6C8C;
+  font-weight: bold;
+}
+
+.time-sep {
+  margin: 0 12rpx;
+  color: #6C8A9B;
+}
+
+.clear-time-icon {
+  margin-left: 20rpx;
+  font-size: 32rpx;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 60rpx;
+  padding: 0 120rpx; /* Further increased side padding to shorten buttons to approx 80% of previous width */
+  gap: 32rpx;
+}
+
+.cancel-btn {
+  flex: 1;
+  margin-right: 0 !important;
+  border-radius: 44rpx !important;
+  height: 88rpx !important;
+  font-weight: bold !important;
+}
+
+.save-btn {
+  flex: 1;
+  border-radius: 44rpx !important;
+  height: 88rpx !important;
+  font-weight: bold !important;
+}

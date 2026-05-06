@@ -1,0 +1,12 @@
+<view class="container" style="background-color: #EBF4F6; min-height: 100vh; padding: 40rpx 32rpx; box-sizing: border-box;">
+  <view class="menu-list">
+    <view class="menu-item" bindtap="exportData">
+      <text class="menu-text">导出记录为文本</text>
+      <van-icon name="arrow" class="menu-arrow" />
+    </view>
+    <view class="menu-item border-none" bindtap="clearAllData">
+      <text class="menu-text text-danger">清除所有数据</text>
+      <van-icon name="arrow" class="menu-arrow" />
+    </view>
+  </view>
+</view>

@@ -1,0 +1,37 @@
+<van-popup show="{{ show }}" position="bottom" bind:close="onCancel" round custom-style="border-radius: 40rpx 40rpx 0 0; width: 100%; overflow: hidden;">
+  <view class="editor-popup">
+    <view class="popup-title">{{ itemData.id ? '编辑事项' : '添加事项' }}</view>
+    <van-field
+      value="{{ content }}"
+      placeholder="请输入专注内容"
+      border="{{ false }}"
+      bind:change="onContentChange"
+      custom-style="background: #F6FAFC; border-radius: 16rpx; margin-bottom: 20rpx;"
+    />
+    <van-cell title="标签分类" is-link value="{{ tagName }}" bind:click="openTagPicker" border="{{ false }}" custom-style="background: #F6FAFC; border-radius: 16rpx; margin-bottom: 20rpx;" />
+    
+    <block wx:if="{{ allowTimeEdit }}">
+      <van-cell title="起止时间 (可选)" border="{{ false }}" custom-style="background: #F6FAFC; border-radius: 16rpx; margin-bottom: 40rpx;">
+        <view class="time-edit-row">
+          <picker mode="time" value="{{startTimeStr}}" start="{{minTime}}" end="{{maxTime}}" bindchange="onStartTimeChange">
+            <text class="time-text {{startTimeStr ? 'active' : ''}}">{{startTimeStr || '开始时间'}}</text>
+          </picker>
+          <text class="time-sep">-</text>
+          <picker mode="time" value="{{endTimeStr}}" start="{{minTime}}" end="{{maxTime}}" bindchange="onEndTimeChange">
+            <text class="time-text {{endTimeStr ? 'active' : ''}}">{{endTimeStr || '结束时间'}}</text>
+          </picker>
+          <van-icon wx:if="{{startTimeStr || endTimeStr}}" name="clear" color="#95A5A6" catchtap="clearTime" class="clear-time-icon"/>
+        </view>
+      </van-cell>
+    </block>
+
+    <view class="btn-group">
+      <van-button type="default" custom-class="cancel-btn" bind:click="onCancel">取消</van-button>
+      <van-button type="info" color="#0F6C8C" custom-class="save-btn" bind:click="onSave">保存</van-button>
+    </view>
+  </view>
+</van-popup>
+
+<van-popup show="{{ showTagPicker }}" position="bottom" bind:close="closeTagPicker" round>
+  <van-picker columns="{{ tagNames }}" show-toolbar bind:cancel="closeTagPicker" bind:confirm="onTagConfirm" />
+</van-popup>

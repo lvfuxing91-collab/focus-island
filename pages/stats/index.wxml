@@ -1,0 +1,81 @@
+<view class="container stats-container">
+  <floating-bar />
+  <view class="summary-card">
+    <view class="card-header">
+      <text class="card-title">TODAY'S SUMMARY</text>
+      <van-icon name="bar-chart-o" color="#0F6C8C" size="20px" />
+    </view>
+    <view class="main-metric">
+      <text class="num">{{todayDurationM}}</text>
+      <text class="unit">分钟</text>
+    </view>
+    <view class="sub-metrics">
+      <view class="sub-pill">完成次数 {{todayCount}}次</view>
+      <view class="sub-pill">已连续专注 {{streakDays}} 天</view>
+    </view>
+  </view>
+
+  <view class="section-header">
+    <text class="section-title">专注数据分析</text>
+    <view class="time-tabs">
+      <text class="time-tab {{timeRange === 'week' ? 'active' : ''}}" bindtap="switchTimeRange" data-range="week">本周</text>
+      <text class="time-tab {{timeRange === 'month' ? 'active' : ''}}" bindtap="switchTimeRange" data-range="month">本月</text>
+    </view>
+  </view>
+  
+  <view class="chart-container">
+    <view class="chart-info" wx:if="{{selectedChartData}}">
+      <text class="chart-info-date">{{selectedChartData.fullDate}}</text>
+      <text class="chart-info-duration">{{selectedChartData.durationStr}}</text>
+    </view>
+    <view class="chart-bars {{timeRange === 'month' ? 'month-mode' : ''}}">
+      <view class="bar-col" wx:for="{{chartData}}" wx:key="index" bindtap="onChartBarTap" data-index="{{index}}">
+        <view class="bar" style="height: {{item.height}}%; background-color: {{item.active ? '#0F6C8C' : '#E7EFF3'}}"></view>
+      </view>
+    </view>
+    <view class="chart-x-axis" wx:if="{{timeRange === 'week'}}">
+      <text class="x-label {{item.active ? 'active' : ''}}" wx:for="{{chartData}}" wx:key="index">{{item.label}}</text>
+    </view>
+  </view>
+
+  <view class="section-header" wx:if="{{tagStats.length > 0}}">
+    <text class="section-title">标签时长分布</text>
+  </view>
+  <view class="summary-card" wx:if="{{tagStats.length > 0}}">
+    <view class="dist-bar">
+      <view class="dist-segment" wx:for="{{tagStats}}" wx:key="id" style="width: {{item.percentage}}%; background-color: {{item.color}}"></view>
+    </view>
+    <view class="dist-legend">
+      <view class="legend-item" wx:for="{{tagStats}}" wx:key="id">
+        <view class="legend-dot" style="background-color: {{item.color}}"></view>
+        <text class="legend-name">{{item.name}} {{item.percentage}}%</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-header">
+    <text class="section-title">最近专注记录</text>
+    <text class="section-action" style="text-transform: uppercase; letter-spacing: 1rpx; font-weight: bold;">VIEW ALL</text>
+  </view>
+
+  <block wx:if="{{recentSessions.length > 0}}">
+    <view class="history-list">
+      <view class="history-item" wx:for="{{recentSessions}}" wx:key="id">
+        <view class="tags-row" style="display: flex; gap: 8rpx; align-items: center; margin-right: 20rpx;">
+          <view class="tag-indicator" wx:for="{{item.uniqueTags}}" wx:for-item="tag" wx:key="id" style="width: 16rpx; height: 16rpx; border-radius: 50%; background-color: {{tag.color}};"></view>
+        </view>
+        <view class="item-content">
+          <view class="item-title">{{item.items[0] ? item.items[0].content : '专注任务'}} <text wx:if="{{item.items.length > 1}}" style="font-size: 24rpx; color: #95A5A6; font-weight: normal;"> 等{{item.items.length}}项</text></view>
+          <view class="item-meta">{{item.dateStr}} · {{item.mode === 'pomodoro' ? '番茄钟' : '自由模式'}}</view>
+        </view>
+        <view class="item-right">
+          <view class="duration">{{item.durationStr}}</view>
+          <view class="status">完成</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <van-empty description="还没有专注记录，快去开始第一次专注吧" />
+  </block>
+</view>

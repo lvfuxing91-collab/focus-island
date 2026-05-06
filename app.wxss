@@ -1,0 +1,70 @@
+/* app.wxss */
+@import '/miniprogram_npm/@vant/weapp/common/index.wxss';
+
+page {
+  background-color: #F6FAFC;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #1E2A2F;
+}
+
+.container {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0 32rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-primary {
+  color: #0F6C8C;
+}
+
+.text-secondary {
+  color: #6B7C85;
+}
+
+.text-dark {
+  color: #1E2A2F;
+}
+
+.bg-gradient {
+  background: linear-gradient(135deg, #0F6C8C 0%, #3094B4 100%);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Fix Vant Dialog Button Text Alignment */
+button {
+  line-height: normal !important;
+}
+
+.van-dialog__button .van-button__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  line-height: normal;
+}
+
+/* Fix Dialog Buttons Width Equality */
+.van-dialog__footer {
+  display: flex !important;
+}
+
+.van-dialog__button {
+  flex: 1 !important;
+}
+
+.van-dialog__button .van-button {
+  width: 100% !important;
+}

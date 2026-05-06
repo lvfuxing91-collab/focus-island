@@ -1,0 +1,46 @@
+<view class="container index-container">
+  <floating-bar />
+  <view class="hero-section">
+    <view class="timer-ring">
+      <view class="timer-text">{{mode === 'free' ? '00:00:00' : presetDisplay}}</view>
+      <view class="timer-subtitle">DEEP FOCUS</view>
+    </view>
+    <view class="state-pill">
+      <van-icon name="flower-o" />
+      <text class="state-text">正处于静谧状态</text>
+    </view>
+  </view>
+
+  <view class="mode-toggle">
+    <view class="mode-item {{mode === 'free' ? 'active' : ''}}" bindtap="switchMode" data-mode="free">自由模式</view>
+    <view class="mode-item {{mode === 'pomodoro' ? 'active' : ''}}" bindtap="switchMode" data-mode="pomodoro">番茄钟</view>
+  </view>
+
+  <view class="preset-row" wx:if="{{mode === 'pomodoro'}}">
+    <view class="preset-chip {{pomodoroPreset === 1500 ? 'active' : ''}}" bindtap="selectPreset" data-preset="1500">
+      <view class="num">25</view>
+      <view class="unit">MIN</view>
+    </view>
+    <view class="preset-chip {{pomodoroPreset === 2700 ? 'active' : ''}}" bindtap="selectPreset" data-preset="2700">
+      <view class="num">45</view>
+      <view class="unit">MIN</view>
+    </view>
+    <view class="preset-chip {{pomodoroPreset === 3600 ? 'active' : ''}}" bindtap="selectPreset" data-preset="3600">
+      <view class="num">1</view>
+      <view class="unit">HOUR</view>
+    </view>
+    <view class="preset-chip {{pomodoroPreset === 7200 ? 'active' : ''}}" bindtap="selectPreset" data-preset="7200">
+      <view class="num">2</view>
+      <view class="unit">HOURS</view>
+    </view>
+  </view>
+
+  <view class="action-area">
+    <view class="start-btn bg-gradient" bindtap="startFocus">
+      <van-icon name="plus" size="24px" color="#fff" />
+      <text class="btn-text">开始专注</text>
+    </view>
+  </view>
+  <van-toast id="van-toast" />
+  <van-dialog id="van-dialog" />
+</view>

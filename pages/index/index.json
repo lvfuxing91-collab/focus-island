@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "专注岛",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "floating-bar": "../../components/floating-bar/index"
+  }
+}

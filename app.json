@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/timer/index",
+    "pages/record/index",
+    "pages/profile/index",
+    "pages/stats/index",
+    "pages/history/index",
+    "pages/settings-reminder/index",
+    "pages/settings-backup/index",
+    "pages/help/index",
+    "pages/about/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6FAFC",
+    "navigationBarTitleText": "专注岛",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#8A99A3",
+    "selectedColor": "#0F6C8C",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "专注"
+      },
+      {
+        "pagePath": "pages/stats/index",
+        "text": "统计"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,152 @@
+.index-container {
+  padding-top: 100rpx;
+  padding-bottom: 140rpx;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80rpx;
+}
+
+.timer-ring {
+  width: 600rpx;
+  height: 600rpx;
+  border-radius: 50%;
+  border: 12rpx solid #E7EFF3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* 渐变装饰环可以使用一个半圆或伪元素模拟，这里简化为 border-color */
+.timer-text {
+  font-size: 110rpx;
+  font-weight: bold;
+  color: #1E2A2F;
+  line-height: 1.2;
+}
+
+.timer-subtitle {
+  font-size: 24rpx;
+  color: #6C8A9B;
+  letter-spacing: 4rpx;
+  margin-top: 10rpx;
+}
+
+.state-pill {
+  margin-top: -30rpx;
+  background: #EDF4F7;
+  padding: 10rpx 30rpx;
+  border-radius: 40rpx;
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  z-index: 10;
+}
+
+.state-text {
+  font-size: 24rpx;
+  color: #6B7C85;
+}
+
+.mode-toggle {
+  display: flex;
+  background: #F2F6F8;
+  border-radius: 40rpx;
+  padding: 8rpx;
+  margin-bottom: 60rpx;
+}
+
+.mode-item {
+  padding: 16rpx 40rpx;
+  font-size: 28rpx;
+  color: #4A5A60;
+  border-radius: 36rpx;
+  transition: all 0.3s;
+}
+
+.mode-item.active {
+  background: #0F6C8C;
+  color: #fff;
+  font-weight: bold;
+}
+
+.preset-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  margin-bottom: 80rpx;
+}
+
+.preset-chip {
+  width: 140rpx;
+  height: 140rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx solid transparent;
+  transition: all 0.3s;
+}
+
+.preset-chip.active {
+  border-color: #0F6C8C;
+  background: #E8F4F8;
+}
+
+.preset-chip .num {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #1E2A2F;
+}
+
+.preset-chip.active .num {
+  color: #0F6C8C;
+}
+
+.preset-chip .unit {
+  font-size: 20rpx;
+  color: #6B7C85;
+  margin-top: 4rpx;
+}
+
+.preset-chip.active .unit {
+  color: #0F6C8C;
+}
+
+.action-area {
+  margin-top: auto;
+  margin-bottom: 60rpx;
+}
+
+.start-btn {
+  width: 400rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20rpx;
+  box-shadow: 0 8rpx 20rpx rgba(15, 108, 140, 0.3);
+}
+
+.start-btn:active {
+  opacity: 0.8;
+}
+
+.btn-text {
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+}

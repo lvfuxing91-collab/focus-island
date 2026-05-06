@@ -1,0 +1,33 @@
+.menu-list {
+  background: #fff;
+  border-radius: 24rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 10rpx rgba(0,0,0,0.02);
+  padding: 0 32rpx;
+}
+
+.menu-item {
+  height: 104rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #F0F4F8;
+}
+
+.menu-item.border-none {
+  border-bottom: none;
+}
+
+.menu-text {
+  flex: 1;
+  font-size: 28rpx;
+  color: #1E2A2F;
+}
+
+.text-danger {
+  color: #E74C3C;
+}
+
+.menu-arrow {
+  font-size: 32rpx;
+  color: #C0C8CC;
+}

@@ -1,0 +1,22 @@
+<view class="container" style="background-color: #EBF4F6; min-height: 100vh; padding: 60rpx 40rpx; box-sizing: border-box;">
+  <view class="header">
+    <image class="logo" src="/assets/icons/tab_focus_active.png" mode="aspectFit"></image>
+    <view class="app-name">专注岛</view>
+    <view class="version">Version 1.0.0</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">产品理念</view>
+    <view class="content">专注不应该被复杂的设定绊住手脚。</view>
+    <view class="content">我们相信，最好的计时器是按下即开始、想停就停的自由。</view>
+    <view class="content">「专注岛」 提供即时正向计时与番茄钟两种模式，记录你在专注中随时冒出的每一项任务，无需提前规划；轻社交功能则让好友的专注状态成为无声的陪伴与激励。</view>
+    <view class="content">没有锁机压力，没有繁琐配置——回归专注本心，让每一分钟都有迹可循。</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">开发团队信息</view>
+    <view class="content">吕福星，华中师范大学计算机学院在读学生，产品方向，目标是成为一名 AI 产品经理。</view>
+    <view class="content">这款小程序的产品设计、需求梳理由我负责，开发工作由 AI 编程助手 Trae 协助完成。</view>
+    <view class="content">没有华丽的团队故事，就是想做一个自己会用的、干净好用的专注工具。</view>
+  </view>
+</view>

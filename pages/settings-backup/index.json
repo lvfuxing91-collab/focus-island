@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "数据管理",
+  "navigationBarBackgroundColor": "#EBF4F6",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index"
+  }
+}

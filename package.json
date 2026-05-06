@@ -1,0 +1,15 @@
+{
+  "name": "focus-island",
+  "version": "1.0.0",
+  "description": "专注岛微信小程序",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@vant/weapp": "^1.11.2",
+    "dayjs": "^1.11.10"
+  },
+  "author": "",
+  "license": "ISC"
+}

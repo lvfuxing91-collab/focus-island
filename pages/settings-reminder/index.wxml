@@ -1,0 +1,17 @@
+<view class="container" style="background-color: #EBF4F6; min-height: 100vh; padding: 40rpx 32rpx; box-sizing: border-box;">
+  <view class="menu-list">
+    <van-radio-group value="{{ reminderType }}" bind:change="onChange">
+      <van-cell-group custom-class="custom-cell-group" border="{{ false }}">
+        <van-cell title="声音" clickable data-name="sound" bind:click="onClick">
+          <van-radio slot="right-icon" name="sound" checked-color="#0F6C8C" />
+        </van-cell>
+        <van-cell title="振动" clickable data-name="vibrate" bind:click="onClick">
+          <van-radio slot="right-icon" name="vibrate" checked-color="#0F6C8C" />
+        </van-cell>
+        <van-cell title="静音" clickable data-name="mute" bind:click="onClick">
+          <van-radio slot="right-icon" name="mute" checked-color="#0F6C8C" />
+        </van-cell>
+      </van-cell-group>
+    </van-radio-group>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<view class="container" style="background-color: #EBF4F6; min-height: 100vh; padding: 40rpx 32rpx; box-sizing: border-box;">
+  <view class="faq-list">
+    <view class="faq-item">
+      <view class="faq-q">Q1：如何使用番茄钟？</view>
+      <view class="faq-a">在首页选择“番茄钟”模式，并设定好时长，点击开始即可。结束后会自动记录本次专注。</view>
+    </view>
+    <view class="faq-item">
+      <view class="faq-q">Q2：如果中途退出小程序会怎样？</view>
+      <view class="faq-a">退出小程序后，专注岛会在后台继续为您计时。如果遇到异常中断，下次打开时会提示您补录记录。</view>
+    </view>
+    <view class="faq-item">
+      <view class="faq-q">Q3：数据存储在哪里？</view>
+      <view class="faq-a">当前版本的所有专注记录均安全地保存在您的手机本地存储中，不会上传到云端。</view>
+    </view>
+  </view>
+
+  <view class="feedback-btn-wrap">
+    <button class="feedback-btn" open-type="contact">发送反馈</button>
+  </view>
+</view>

@@ -1,0 +1,146 @@
+.record-container {
+  padding: 40rpx 32rpx;
+}
+
+.summary-card {
+  background: linear-gradient(135deg, #EAF3F6 0%, #D4E6EE 100%);
+  border-radius: 40rpx;
+  padding: 60rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60rpx;
+  box-shadow: 0 10rpx 30rpx rgba(15, 108, 140, 0.1);
+}
+
+.card-subtitle {
+  font-size: 24rpx;
+  color: #6C8A9B;
+  letter-spacing: 2rpx;
+  margin-bottom: 20rpx;
+}
+
+.duration-display {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20rpx;
+}
+
+.duration-display .num {
+  font-size: 96rpx;
+  font-weight: bold;
+  color: #0F6C8C;
+}
+
+.duration-display .unit {
+  font-size: 40rpx;
+  color: #0F6C8C;
+  margin: 0 10rpx;
+}
+
+.card-desc {
+  font-size: 24rpx;
+  color: #6B7C85;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.section-header .title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #1E2A2F;
+}
+
+.section-header .count {
+  font-size: 24rpx;
+  color: #0F6C8C;
+  background: #EAF3F6;
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+.items-list {
+  flex: 1;
+  margin-bottom: 40rpx;
+}
+
+.item-card {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  border: 2rpx solid #E7EFF3;
+  box-shadow: 0 4rpx 10rpx rgba(0,0,0,0.02);
+}
+
+.item-content {
+  flex: 1;
+  margin-right: 20rpx;
+}
+
+.item-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #1E2A2F;
+  margin-bottom: 12rpx;
+}
+
+.item-meta {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.tag {
+  font-size: 20rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #95A5A6;
+}
+
+.add-item-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30rpx;
+  border: 2rpx dashed #E7EFF3;
+  border-radius: 24rpx;
+  margin-bottom: 40rpx;
+}
+
+.add-text {
+  font-size: 28rpx;
+  color: #0F6C8C;
+  margin-left: 10rpx;
+}
+
+.popup-container {
+  padding: 40rpx;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.confirm-btn {
+  margin-top: 60rpx !important;
+  border-radius: 40rpx !important;
+}

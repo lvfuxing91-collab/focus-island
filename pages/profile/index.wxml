@@ -1,0 +1,80 @@
+<view class="container profile-container">
+  <floating-bar />
+  <view class="header-area">
+    <view class="avatar-wrap">
+      <button class="avatar-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+        <image class="avatar-img" src="{{ avatarUrl || '/assets/icons/tab_profile.png' }}" mode="aspectFill"></image>
+        <view class="camera-icon">
+          <van-icon name="photograph" size="12px" color="#fff" />
+        </view>
+      </button>
+    </view>
+    <view class="user-info">
+      <view class="user-name-wrap" bindtap="editNickname">
+        <input 
+          wx:if="{{ isEditingNickname }}"
+          class="nickname-input" 
+          type="nickname" 
+          value="{{ nickname }}" 
+          focus="{{ isEditingNickname }}"
+          bindblur="onNicknameBlur"
+          bindconfirm="onNicknameBlur"
+        />
+        <block wx:else>
+          <text class="user-name">{{ nickname }}</text>
+          <van-icon name="edit" size="14px" color="#6C8A9B" class="edit-icon" />
+        </block>
+      </view>
+      <view class="data-overview">
+        累计专注 {{totalDurationH}} 小时 | 累计 {{totalCount}} 次
+      </view>
+    </view>
+  </view>
+
+  <view class="settings-group">
+    <view class="group-title">我的记录</view>
+    <view class="menu-list">
+      <view class="menu-item border-none" bindtap="goToHistory">
+        <van-icon name="clock-o" class="menu-icon" />
+        <text class="menu-text">专注历史</text>
+        <van-icon name="arrow" class="menu-arrow" />
+      </view>
+    </view>
+  </view>
+
+  <view class="settings-group">
+    <view class="group-title">设置</view>
+    <view class="menu-list">
+      <view class="menu-item" bindtap="goToReminder">
+        <van-icon name="bell" class="menu-icon" />
+        <text class="menu-text">提醒设置</text>
+        <van-icon name="arrow" class="menu-arrow" />
+      </view>
+      <view class="menu-item border-none" bindtap="goToBackup">
+        <van-icon name="points" class="menu-icon" />
+        <text class="menu-text">数据管理</text>
+        <van-icon name="arrow" class="menu-arrow" />
+      </view>
+    </view>
+  </view>
+
+  <view class="settings-group">
+    <view class="group-title">关于</view>
+    <view class="menu-list">
+      <view class="menu-item" bindtap="goToHelp">
+        <van-icon name="question-o" class="menu-icon" />
+        <text class="menu-text">帮助与反馈</text>
+        <van-icon name="arrow" class="menu-arrow" />
+      </view>
+      <view class="menu-item border-none" bindtap="goToAbout">
+        <van-icon name="info-o" class="menu-icon" />
+        <text class="menu-text">关于专注岛</text>
+        <van-icon name="arrow" class="menu-arrow" />
+      </view>
+    </view>
+  </view>
+
+  <view class="footer-version">
+    <text>Version 1.0.0</text>
+  </view>
+</view>

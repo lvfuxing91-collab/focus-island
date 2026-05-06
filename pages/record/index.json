@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "本次专注记录",
+  "navigationBarBackgroundColor": "#F6FAFC",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "item-editor": "../../components/item-editor/index"
+  }
+}
