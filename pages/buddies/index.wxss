@@ -1,0 +1,110 @@
+.buddy-container {
+  padding: 32rpx;
+  background-color: #F6FAFC;
+  min-height: 100vh;
+  padding-bottom: 120rpx;
+}
+
+.header-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 32rpx;
+  border-radius: 24rpx;
+  margin-bottom: 32rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.02);
+}
+
+.header-action .title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #0F6C8C;
+}
+
+.buddy-card {
+  display: flex;
+  background: #fff;
+  padding: 24rpx;
+  border-radius: 24rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
+}
+
+.buddy-card.focusing {
+  border: 2rpx solid rgba(15, 108, 140, 0.2);
+  background: linear-gradient(to right, #ffffff, #f0f7f9);
+}
+
+.buddy-card .avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 24rpx;
+  background-color: #eee;
+}
+
+.buddy-card .info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buddy-card .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.buddy-card .nickname {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #1E2A2F;
+}
+
+.status-tag {
+  font-size: 22rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+  background-color: #f0f0f0;
+  color: #999;
+}
+
+.status-tag.active {
+  background-color: #e6f7ff;
+  color: #0F6C8C;
+}
+
+.buddy-card .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.focus-item {
+  font-size: 24rpx;
+  color: #0F6C8C;
+  max-width: 250rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.duration {
+  font-size: 24rpx;
+  color: #8A99A3;
+}
+
+.invite-btn {
+  width: 300rpx !important;
+  margin-top: 40rpx;
+}
+
+.loading-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 40rpx;
+}

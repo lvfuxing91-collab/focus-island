@@ -36,6 +36,9 @@ Page({
     this.startTimer();
     this.startSnapshot();
     this.initTags();
+
+    // 同步到云端
+    app.updateCloudFocusStatus(true, app.globalData.timerState.currentItems[0]?.content);
   },
 
   initTags() {
@@ -199,6 +202,10 @@ Page({
     // Reset currentItems
     state.currentItems = [];
     
+    // 同步到云端
+    app.syncDurationToCloud(duration);
+    app.updateCloudFocusStatus(false);
+    
     try {
       wx.vibrateLong();
     } catch(e) {}
@@ -287,6 +294,10 @@ Page({
     app.stopGlobalTimer();
     app.globalData.timerState.isRunning = false;
     wx.removeStorageSync('timer_snapshot');
+
+    // 同步到云端
+    app.updateCloudFocusStatus(false);
+
     wx.switchTab({
       url: '/pages/index/index'
     });

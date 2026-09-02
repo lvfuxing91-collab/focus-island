@@ -1,0 +1,90 @@
+.rank-container {
+  background-color: #F6FAFC;
+  min-height: 100vh;
+  padding-bottom: 180rpx;
+}
+
+.rank-list {
+  padding: 24rpx;
+}
+
+.rank-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 24rpx 32rpx;
+  border-radius: 24rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.02);
+}
+
+.rank-item.self {
+  background-color: #f0f7f9;
+  border: 2rpx solid rgba(15, 108, 140, 0.1);
+}
+
+.rank-num {
+  width: 60rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #8A99A3;
+  display: flex;
+  justify-content: center;
+}
+
+.medal-emoji {
+  font-size: 36rpx;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin: 0 24rpx;
+  background-color: #eee;
+}
+
+.nickname {
+  flex: 1;
+  font-size: 28rpx;
+  color: #1E2A2F;
+  font-weight: 500;
+}
+
+.duration {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #0F6C8C;
+}
+
+.my-rank-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24rpx 32rpx calc(24rpx + env(safe-area-inset-bottom));
+  background: #fff;
+  box-shadow: 0 -8rpx 24rpx rgba(0, 0, 0, 0.05);
+  z-index: 100;
+}
+
+.self-fixed {
+  margin-bottom: 0;
+  box-shadow: none;
+  background: #f0f7f9;
+}
+
+.nickname-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.tag {
+  font-size: 18rpx;
+  background: #0F6C8C;
+  color: #fff;
+  padding: 2rpx 8rpx;
+  border-radius: 4rpx;
+  margin-left: 12rpx;
+}

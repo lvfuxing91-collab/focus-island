@@ -1,0 +1,38 @@
+<view class="container rank-container">
+  <floating-bar />
+  <van-toast id="van-toast" />
+
+  <van-tabs active="{{ activeTab }}" bind:change="onTabChange" color="#0F6C8C" line-width="20px">
+    <van-tab title="本周" name="week"></van-tab>
+    <van-tab title="本月" name="month"></van-tab>
+    <van-tab title="累计" name="total"></van-tab>
+  </van-tabs>
+
+  <view class="rank-list" wx:if="{{ rankList.length > 0 }}">
+    <view class="rank-item {{ item.isSelf ? 'self' : '' }}" wx:for="{{ rankList }}" wx:key="id">
+      <view class="rank-num">
+        <text wx:if="{{ index === 0 }}" class="medal-emoji">🥇</text>
+        <text wx:elif="{{ index === 1 }}" class="medal-emoji">🥈</text>
+        <text wx:elif="{{ index === 2 }}" class="medal-emoji">🥉</text>
+        <text wx:else>{{ index + 1 }}</text>
+      </view>
+      <image class="avatar" src="{{ item.avatarUrl || '/assets/icons/tab_profile.png' }}" mode="aspectFill"></image>
+      <text class="nickname">{{ item.nickname }}</text>
+      <text class="duration">{{ item.durationText }}</text>
+    </view>
+  </view>
+
+  <van-empty wx:elif="{{ !loading }}" description="暂无排名数据" />
+
+  <view class="my-rank-fixed" wx:if="{{ myRank }}">
+    <view class="rank-item self-fixed">
+      <view class="rank-num">{{ myRank.index + 1 }}</view>
+      <image class="avatar" src="{{ myRank.avatarUrl || '/assets/icons/tab_profile.png' }}" mode="aspectFill"></image>
+      <view class="nickname-wrap">
+        <text class="nickname">{{ myRank.nickname }}</text>
+        <text class="tag">我</text>
+      </view>
+      <text class="duration">{{ myRank.durationText }}</text>
+    </view>
+  </view>
+</view>

@@ -4,6 +4,7 @@ Component({
     list: [
       { url: "/pages/index/index" },
       { url: "/pages/stats/index" },
+      { url: "/pages/buddies/index" },
       { url: "/pages/profile/index" }
     ]
   },

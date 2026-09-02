@@ -1,0 +1,45 @@
+<view class="container buddy-container">
+  <floating-bar />
+  <van-toast id="van-toast" />
+  <van-dialog id="van-dialog" />
+
+  <view class="header-action" bindtap="goToRank">
+    <text class="title">专注排行榜</text>
+    <van-icon name="arrow" />
+  </view>
+
+  <view class="buddy-list" wx:if="{{ buddies.length > 0 }}">
+    <view 
+      class="buddy-card {{ item.isFocusing ? 'focusing' : '' }}" 
+      wx:for="{{ buddies }}" 
+      wx:key="id"
+      bindlongpress="onLongPress"
+      data-id="{{ item.id }}"
+      data-name="{{ item.nickname }}"
+    >
+      <image class="avatar" src="{{ item.avatarUrl || '/assets/icons/tab_profile.png' }}" mode="aspectFill"></image>
+      <view class="info">
+        <view class="top">
+          <text class="nickname">{{ item.nickname }}</text>
+          <view class="status-tag {{ item.isFocusing ? 'active' : '' }}">
+            {{ item.isFocusing ? '专注中' : '空闲' }}
+          </view>
+        </view>
+        <view class="bottom">
+          <text class="focus-item" wx:if="{{ item.isFocusing && item.currentFocusItem }}">正在：{{ item.currentFocusItem }}</text>
+          <text class="duration">本周专注：{{ item.durationFormatted }}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <van-empty wx:elif="{{ !loading }}" description="还没有搭子，快去邀请好友吧">
+    <van-button round type="info" color="#0F6C8C" custom-class="invite-btn" bind:click="goToInvite">
+      邀请搭子
+    </van-button>
+  </van-empty>
+
+  <view class="loading-wrap" wx:if="{{ loading }}">
+    <van-loading size="24px">加载中...</van-loading>
+  </view>
+</view>

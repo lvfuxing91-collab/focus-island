@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "专注排行榜",
+  "navigationBarBackgroundColor": "#F6FAFC",
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "floating-bar": "../../components/floating-bar/index"
+  }
+}

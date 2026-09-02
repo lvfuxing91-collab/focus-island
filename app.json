@@ -6,6 +6,8 @@
     "pages/profile/index",
     "pages/stats/index",
     "pages/history/index",
+    "pages/buddies/index",
+    "pages/rank/index",
     "pages/settings-reminder/index",
     "pages/settings-backup/index",
     "pages/help/index",
@@ -31,6 +33,10 @@
       {
         "pagePath": "pages/stats/index",
         "text": "统计"
+      },
+      {
+        "pagePath": "pages/buddies/index",
+        "text": "搭子"
       },
       {
         "pagePath": "pages/profile/index",

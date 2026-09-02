@@ -2,9 +2,79 @@
 const { formatDuration } = require('./utils/util.js');
 
 App({
-  onLaunch() {
+  onLaunch(options) {
+    // 初始化云开发
+    if (!wx.cloud) {
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力');
+    } else {
+      wx.cloud.init({
+        env: 'cloud1-d5gyzm0fd93e0743b',
+        traceUser: true,
+      });
+    }
+
     this.initTags();
     this.checkAbnormalSession();
+    this.checkInvite(options);
+    this.syncUserToCloud();
+  },
+
+  checkInvite(options) {
+    if (options && options.query && options.query.inviteId) {
+      const inviteId = options.query.inviteId;
+      // 存储邀请ID，在用户进入后弹窗确认
+      this.globalData.pendingInviteId = inviteId;
+    }
+  },
+
+  async syncUserToCloud() {
+    try {
+      const avatarUrl = wx.getStorageSync('userAvatar') || '';
+      const nickname = wx.getStorageSync('userNickname') || '专注岛用户';
+      
+      const res = await wx.cloud.callFunction({
+        name: 'updateFocusStatus',
+        data: {
+          action: 'syncProfile',
+          profile: { avatarUrl, nickname }
+        }
+      });
+      
+      if (res.result && res.result.openid) {
+        wx.setStorageSync('openid', res.result.openid);
+      }
+    } catch (e) {
+      console.error('同步用户信息到云端失败', e);
+    }
+  },
+
+  async updateCloudFocusStatus(isFocusing, currentItem = '') {
+    try {
+      await wx.cloud.callFunction({
+        name: 'updateFocusStatus',
+        data: {
+          isFocusing,
+          currentFocusItem: currentItem,
+          focusStartTime: isFocusing ? Date.now() : null
+        }
+      });
+    } catch (e) {
+      console.error('同步专注状态到云端失败', e);
+    }
+  },
+
+  async syncDurationToCloud(duration) {
+    try {
+      await wx.cloud.callFunction({
+        name: 'updateFocusStatus',
+        data: {
+          action: 'addDuration',
+          duration: duration // 秒
+        }
+      });
+    } catch (e) {
+      console.error('同步专注时长到云端失败', e);
+    }
   },
   
   onShow() {
@@ -31,7 +101,8 @@ App({
       displayTime: '00:00'
     },
     globalTimer: null,
-    globalSnapshotTimer: null
+    globalSnapshotTimer: null,
+    pendingInviteId: null
   },
 
   startGlobalTimer() {
@@ -151,6 +222,10 @@ App({
       storage.saveSession(session);
       this.globalData.timerState.currentItems = [];
       
+      // 同步时长到云端
+      this.syncDurationToCloud(duration);
+      this.updateCloudFocusStatus(false);
+      
       try { wx.vibrateLong(); } catch(e) {}
       
       // Navigate to record page
@@ -225,6 +300,10 @@ App({
     
     wx.setStorageSync('focus_sessions', sessions);
     wx.removeStorageSync('timer_snapshot');
+
+    // 同步时长到云端
+    this.syncDurationToCloud(session.duration);
+    this.updateCloudFocusStatus(false);
     
     wx.showToast({
       title: '已补录',

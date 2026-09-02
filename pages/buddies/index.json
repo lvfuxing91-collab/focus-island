@@ -1,12 +1,12 @@
 {
-  "navigationBarTitleText": "我的",
-  "navigationBarBackgroundColor": "#EBF4F6",
-  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "我的搭子",
+  "navigationBarBackgroundColor": "#F6FAFC",
   "usingComponents": {
     "van-icon": "@vant/weapp/icon/index",
-    "van-switch": "@vant/weapp/switch/index",
+    "van-empty": "@vant/weapp/empty/index",
     "van-dialog": "@vant/weapp/dialog/index",
     "van-toast": "@vant/weapp/toast/index",
     "floating-bar": "../../components/floating-bar/index"
-  }
+  },
+  "enablePullDownRefresh": true
 }
